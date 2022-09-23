@@ -1,10 +1,13 @@
 resource "aws_s3_bucket" "my-s3-bucket" {
-  bucket_prefix = var.bucket_prefix
-  acl = var.acl
+  bucket = "nav1992bucket7474"
+  acl = private
   
    versioning {
-    enabled = var.versioning
+    enabled = true
   }
   
-  tags = var.tags
+   tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
 }
