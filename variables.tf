@@ -26,4 +26,22 @@ variable "ami_id" {
     description = "AMI for Linux Ec2 instance" 
     default     = "ami-01216e7612243e0ef" 
 }
+variable "acl" {
+    type        = string
+    description = " Defaults to private "
+    default     = "private"
+}
+variable "bucket_prefix" {
+    type        = string
+    description = "(required since we are not using 'bucket') Creates a unique bucket name beginning with the specified prefix"
+    default     = "my-s3bucket-"
+}
+variable "tags" {
+    type        = map
+    description = "(Optional) A mapping of tags to assign to the bucket."
+    default     = {
+        environment = "DEV"
+        terraform   = "true"
+    }
+}
 
